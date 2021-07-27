@@ -4522,7 +4522,7 @@ static void emitDarwinBCHeaderAndTrailer(SmallVectorImpl<char> &Buffer,
 /// Helper to write the header common to all bitcode files.
 static void writeBitcodeHeader(BitstreamWriter &Stream) {
   // Emit the file header.
-  Stream.Emit((unsigned)'B', 8);
+  Stream.Emit((unsigned)'D', 8);
   Stream.Emit((unsigned)'C', 8);
   Stream.Emit(0x0, 4);
   Stream.Emit(0xC, 4);

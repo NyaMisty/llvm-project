@@ -214,7 +214,7 @@ typedef llvm::function_ref<Optional<std::string>(StringRef)>
     // These bytes sort of have a hidden message, but it's not in
     // little-endian this time, and it's a little redundant.
     return BufPtr != BufEnd &&
-           BufPtr[0] == 'B' &&
+           BufPtr[0] == 'D' &&
            BufPtr[1] == 'C' &&
            BufPtr[2] == 0xc0 &&
            BufPtr[3] == 0xde;

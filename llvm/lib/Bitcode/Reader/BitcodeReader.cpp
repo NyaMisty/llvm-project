@@ -109,7 +109,7 @@ static Error hasInvalidBitcodeHeader(BitstreamCursor &Stream) {
   if (!Stream.canSkipToPos(4))
     return createStringError(std::errc::illegal_byte_sequence,
                              "file too small to contain bitcode header");
-  for (unsigned C : {'B', 'C'})
+  for (unsigned C : {'D', 'C'})
     if (Expected<SimpleBitstreamCursor::word_t> Res = Stream.Read(8)) {
       if (Res.get() != C)
         return createStringError(std::errc::illegal_byte_sequence,
